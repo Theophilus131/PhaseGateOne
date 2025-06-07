@@ -40,12 +40,14 @@
 	
 	System.out.println("Welcom to Tphils Menstrual App ");
 
+	LocalDate startDate = null;
+	
 	while(true){
 	System.out.println("Enter the first day of your last period (YYYY-MM-DD): ");
 	String lastPeriodDate = input.nextLine();
 	
 	try {
-	LocalDate startDate = LocalDate.parse(lastPeriodDate);
+	 startDate = LocalDate.parse(lastPeriodDate);
 	break;
 	} catch (Exception e){
 		System.out.println("invalid date format! enter the date as (YYYY-MM-DD)");
