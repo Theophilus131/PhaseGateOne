@@ -4,6 +4,13 @@
 	
 	public class MenstrualApp{
 	
+	public static void calculateCycle(LocalDate startDate, int cycleLength){
+	
+	LocalDate ovulationDate = startDate.plusDays(cycleLength - 14);
+	
+	}
+
+	
 	public static void main(String [] args){
 		Scanner input = new Scanner(System.in);
 	
@@ -17,6 +24,10 @@
 	
 	System.out.println("Enter your aveage cycle length: ");
 	int cycleLength = input.nextInt();
-}
+	
+	 calculateCycle(startDate, cycleLength);
+	
 
 	}
+	
+}
