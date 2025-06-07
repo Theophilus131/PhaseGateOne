@@ -8,6 +8,12 @@
 	
 	LocalDate ovulationDate = startDate.plusDays(cycleLength - 14);
 	
+	LocalDate fertileStart = ovulationDate.minusDays(5);
+	LocalDate fertileEnd = ovulationDate.plusDays(1);
+	
+	
+	   
+	System.out.println("Estimated ovulation day: " + ovulationDate);   
 	}
 
 	
