@@ -19,6 +19,13 @@
 
 }
 	
+	@Test
+	public void testThatOvulationIsCorrect(){
+	LocalDate actual = MenstrualApp.calculateOvulationDate(LocalDate.of(2025, 6, 1), 28);
+        LocalDate expected = LocalDate.of(2025, 6, 15);
+        assertEquals(expected, actual);
+
+}
 
 	
 	
