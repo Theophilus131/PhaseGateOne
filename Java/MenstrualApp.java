@@ -7,9 +7,20 @@
 	public static void calculateCycle(LocalDate startDate, int cycleLength){
 	
 	
-	LocalDate nextPeriod = startDate.plusDays(cycleLength);
+	public static LocalDate calculateNextPeriod(LocalDate startDate, int cycleLength) {
+        return startDate.plusDays(cycleLength);
+    }	
+		
+		
+	public static void LocalDate ovulationDate(LocalDate startDate, int cycleLength){
+		
+		return startDate.plusDays(cycleLength - 14);
+	}
 	
-	LocalDate ovulationDate = startDate.plusDays(cycleLength - 14);
+	
+	//LocalDate nextPeriod = startDate.plusDays(cycleLength);
+	
+	//LocalDate ovulationDate = startDate.plusDays(cycleLength - 14);
 	
 	
 	LocalDate fertileStart = ovulationDate.minusDays(5);
