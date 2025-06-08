@@ -4,45 +4,34 @@
 	
 	public class MenstrualApp{
 	
-	public static void calculateCycle(LocalDate startDate, int cycleLength){
-	
-	
-	public static LocalDate calculateNextPeriod(LocalDate startDate, int cycleLength) {
+    public static LocalDate calculateNextPeriod(LocalDate startDate, int cycleLength) {
         return startDate.plusDays(cycleLength);
-    }	
-		
-		
-	public static void LocalDate ovulationDate(LocalDate startDate, int cycleLength){
-		
-		return startDate.plusDays(cycleLength - 14);
-	}
-	
-	
-	//LocalDate nextPeriod = startDate.plusDays(cycleLength);
-	
-	//LocalDate ovulationDate = startDate.plusDays(cycleLength - 14);
-	
-	
-	LocalDate fertileStart = ovulationDate.minusDays(5);
-	LocalDate fertileEnd = ovulationDate.plusDays(1);
-	
-	
-	LocalDate safeBeforeStart = startDate;
-    LocalDate safeBeforeEnd   = fertileStart.minusDays(1);
-	
-	
-	LocalDate safeAfterStart  = fertileEnd.plusDays(1);
-    LocalDate safeAfterEnd    = nextPeriod.minusDays(1);
-	
-	
-	System.out.println("\n  Results:");
-	System.out.println("Next period starts on: " + nextPeriod); 
-	System.out.println("Estimated ovulation day: " + ovulationDate);   
-	System.out.println("Fertile window:         " + fertileStart + " to " + fertileEnd);
-	System.out.println("Safe days before:       " + safeBeforeStart + " to " + safeBeforeEnd);
-    System.out.println("Safe days after:        " + safeAfterStart  + " to " + safeAfterEnd);
-	
-	}
+    }
+
+    public static LocalDate calculateOvulationDate(LocalDate startDate, int cycleLength) {
+        return startDate.plusDays(cycleLength - 14);
+    }
+
+    public static LocalDate calculateFertileStart(LocalDate ovulationDate) {
+        return ovulationDate.minusDays(5);
+    }
+
+    public static LocalDate calculateFertileEnd(LocalDate ovulationDate) {
+        return ovulationDate.plusDays(1);
+    }
+
+    public static LocalDate calculateSafeBeforeEnd(LocalDate fertileStart) {
+        return fertileStart.minusDays(1);
+    }
+
+    public static LocalDate calculateSafeAfterStart(LocalDate fertileEnd) {
+        return fertileEnd.plusDays(1);
+    }
+
+    public static LocalDate calculateSafeAfterEnd(LocalDate nextPeriod) {
+        return nextPeriod.minusDays(1);
+    }
+
 
 	
 	public static void main(String [] args){
@@ -78,8 +67,36 @@
 	}
 	
 }
+
+		LocalDate nextPeriod = calculateNextPeriod(startDate, cycleLength);
+        
+		LocalDate ovulationDate = calculateOvulationDate(startDate, cycleLength);
+        
+		LocalDate fertileStart = calculateFertileStart(ovulationDate);
+        
+		LocalDate fertileEnd = calculateFertileEnd(ovulationDate);
+        
+		LocalDate safeBeforeEnd = calculateSafeBeforeEnd(fertileStart);
+        
+		LocalDate safeAfterStart = calculateSafeAfterStart(fertileEnd);
+        
+		LocalDate safeAfterEnd = calculateSafeAfterEnd(nextPeriod);
+
+
 	
-	calculateCycle(startDate, cycleLength);
+	System.out.println("\n  Results:");
+	
+	System.out.println("Next period starts on: " + nextPeriod); 
+	
+	System.out.println("Estimated ovulation day: " + ovulationDate);   
+	
+	System.out.println("Fertile window:         " + fertileStart + " to " + fertileEnd);
+	
+	System.out.println("Safe days before:       " + safeBeforeEnd + " to " + safeBeforeEnd);
+    
+	System.out.println("Safe days after:        " + safeAfterStart  + " to " + safeAfterEnd);
+
+	
 	
 
 	}
