@@ -7,11 +7,23 @@
 	
 	@Test
 	public void testThatFunctionExist(){
-	MenstrualApp.calculateCycle(LocalDate.of(2025, 6, 6), 28);
-
+	MenstrualApp.calculateNextPeriod(LocalDate.of(2025, 6, 6), 28);
 
 	}
 
+	@Test
+	public void testThatNextPeriodIsCorrect(){
+	LocalDate actual = MenstrualApp.calculateNextPeriod(LocalDate.of(2025, 6, 6), 28);
+        LocalDate expected = LocalDate.of(2025, 7, 4);
+        assertEquals(expected, actual);
+
+}
+	
+
+	
+	
+	
+	
 	
 	
 }
