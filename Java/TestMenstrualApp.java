@@ -26,9 +26,14 @@
         assertEquals(expected, actual);
 
 }
+	
+	@Test
+	public void testThatFertileStartIsCorrect(){
+	LocalDate actual = MenstrualApp.calculateFertileStart(LocalDate.of(2025, 6, 1));
+        LocalDate expected = LocalDate.of(2025, 5, 27);
+        assertEquals(expected, actual);
 
-	
-	
+}
 	
 	
 	
