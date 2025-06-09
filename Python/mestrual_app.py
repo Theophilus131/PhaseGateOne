@@ -1,4 +1,6 @@
+
 from datetime import datetime, timedelta
+
 
 def get_valid_cycle_length():
    
@@ -37,7 +39,7 @@ def calculate_flow_and_safe_days(last_period_str, fertile_start, fertile_end, ne
     
     last_period_date = datetime.strptime(last_period_str, "%Y-%m-%d")
     
-    period_end = last_period_date + timedelta(days=4)  # 5-day period
+    period_end = last_period_date + timedelta(days=4) 
 
     
     safe_before = (period_end + timedelta(days=1), fertile_start - timedelta(days=1))
@@ -49,8 +51,6 @@ def calculate_flow_and_safe_days(last_period_str, fertile_start, fertile_end, ne
             
             
 
-
-
 if __name__ == "__main__":
     
     last_period = input("Enter the first day of your last period (YYYY-MM-DD): ")
@@ -58,6 +58,7 @@ if __name__ == "__main__":
     cycle_length = get_valid_cycle_length()
 
     next_period_date = calculate_next_period(last_period, cycle_length)
+    
     print(" Your next period is expected on:", next_period_date)
 
 
@@ -68,5 +69,7 @@ if __name__ == "__main__":
     flow, safe_before, safe_after = calculate_flow_and_safe_days(last_period, fertile_start, fertile_end, next_period_date)
 
     print(" Flow days:", flow[0].strftime("%Y-%m-%d"), "to", flow[1].strftime("%Y-%m-%d"))
+    
     print(" Safe before fertile:", safe_before[0].strftime("%Y-%m-%d"), "to", safe_before[1].strftime("%Y-%m-%d"))
+    
     print(" Safe after fertile:", safe_after[0].strftime("%Y-%m-%d"), "to", safe_after[1].strftime("%Y-%m-%d"))
