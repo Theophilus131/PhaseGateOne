@@ -70,3 +70,7 @@ if __name__ == "__main__":
     print(" Flow days:", flow[0].strftime("%Y-%m-%d"), "to", flow[1].strftime("%Y-%m-%d"))
     print(" Safe before fertile:", safe_before[0].strftime("%Y-%m-%d"), "to", safe_before[1].strftime("%Y-%m-%d"))
     print(" Safe after fertile:", safe_after[0].strftime("%Y-%m-%d"), "to", safe_after[1].strftime("%Y-%m-%d"))
+
+
+# ur code is failling if i enter the date in the wrong format
+# 
