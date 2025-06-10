@@ -29,8 +29,8 @@
 	int total = 0;
 	boolean doubleDigit = false;
 	
-	for(int count = cardLength - 1; i >= 0; i--){
-	int digit = Character.getNumericValue(cardNumber.charAt(i));
+	for(int count = cardLength - 1; count >= 0; count--){
+	int digit = Character.getNumericValue(cardNumber.charAt(count));
 	
 	if(doubleDigit){
 	digit *= 2;
@@ -55,7 +55,6 @@
 	}
 	
 	
-	
 	public static void main(String [] args){
 	
 	Scanner input = new Scanner(System.in);
@@ -64,7 +63,7 @@
 	String cardNumber = input.nextLine();
 
 	
-	
+	 System.out.println(validatingCardDetail(cardNumber));
 	
 		}
 	
