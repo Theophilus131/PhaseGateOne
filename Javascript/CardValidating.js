@@ -1,57 +1,59 @@
 const prompt = require("prompt-sync")();
 
-let cardNumber = Number(prompt("kindly enter card details to verify : "));
+let cardNumber = prompt("kindly enter card details to verify : ");
 
-function CardNumber(cardNumber){
-let cardLength = cardNumber.length;
-let visaCards = {};
-let masterCard = {};
-let discoverCard = {};
-let americaExpressCard = {};
-
-if(cardLength == 13 || cardLength == 16 && cardNumber[0] == 4){
-
-return VisaCards; 
-}
-
-if(cardLength == 13 || cardLength == 16 && cardNumber[0]== 5){
-
-return MasterCard;
-}
-
-if(cardLength == 13 || cardLength == 16 && cardNumber [3][7]){
-
-return discoverCard;
-}
-
-if(cardLength == 13 || cardLength == 16 && cardnumber [6]){
-
-return americaExpressCard;
-}
-
-let evenSum = 0;
-let oddSum = 0;
-let total = 0
-
-for(let i = 0; i < cardNumber.length; i-- )
-
-	evenSum += cardNumber,length[i];
+function validateCard(cardNumber){
 	
-	oddSum += cardNumber.length[i];
-{
-
- 	total = evenSum + oddSum;
-
-if(total % 10 == 0){
-console.log("valid card: ");
-
-else{console.log("invalid card : ")
-
-}
-
+	let cardLength = cardNumber.length;
 	
-
-
-
+	let cardType = "" ;
+	
+	if(cardLength === 16 && cardNumber.charAt(0) === '4'){
+		cardType = "Visa";
+	}
+	
+	if(cardLength === 16 && cardNumber.charAt(0) === '5'){
+		cardType = "MasterCard";
+	}
+	if(cardLength === 16 && cardNumber.charAt(0) === '6'){
+		cardType = "Discover";
+	}
+	if(cardLength === 15 && cardNumber.substring(0, 2) === ("37")){
+		cardType = "American Express";
+	} else {
+	
+		return "invalid card type";
+	}
+	
+	let total = 0;
+	let doubleDigit = false;
+	
+	for(let count = cardLength - 1; count >= 0; count--){
+	let digit = parseInt(cardNumber(count));
+	
+	if(doubleDigit){
+	digit *= 2;
+	
+	if(digit > 9){
+	digit -= 9;
+	}
+		}
+	total += digit;
+	doubleDigit = !doubleDigit;
+	
+	}
+	
+	if(total % 10 == 0){
+	return "valid " +cardType+ " card";
+	}else {
+	
+	return "invalid " +cardType+ " card";
+	}
+	}
+console.log(validateCard(cardNumber));
+	
+		
+	
+	
 
 
