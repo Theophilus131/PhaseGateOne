@@ -84,7 +84,7 @@
 
 
 	
-	System.out.println("\n  Results:");
+	System.out.println("\n  Your Menstraul Results:");
 	
 	System.out.println("Next period starts on: " + nextPeriod); 
 	
