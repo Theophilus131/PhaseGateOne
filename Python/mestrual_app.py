@@ -48,9 +48,8 @@ def calculate_flow_and_safe_days(last_period_str, fertile_start, fertile_end, ne
 
     return (last_period_date, period_end), safe_before, safe_after
     
-            
-            
-
+ 
+       
 if __name__ == "__main__":
     
     last_period = input("Enter the first day of your last period (YYYY-MM-DD): ")
