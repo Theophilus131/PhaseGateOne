@@ -55,22 +55,7 @@ if __name__ == "__main__":
             print(calculate_fertile_window(year, month, day, cycle_length))
             print(calculate_safe_period(year, month, day, cycle_length))
 
-<<<<<<< HEAD
+
             break
         except ValueError:
             print("Invalid input. Please enter numbers only.\n")
-=======
-    ovulation, fertile_start, fertile_end = calculate_ovulation_and_fertile_window(next_period_date)
-    print(" Ovulation day:", ovulation.date())
-    print(" Fertile window:", fertile_start.date(), "to", fertile_end.date())
-    
-    flow, safe_before, safe_after = calculate_flow_and_safe_days(last_period, fertile_start, fertile_end, next_period_date)
-
-    print(" Flow days:", flow[0].strftime("%Y-%m-%d"), "to", flow[1].strftime("%Y-%m-%d"))
-    print(" Safe before fertile:", safe_before[0].strftime("%Y-%m-%d"), "to", safe_before[1].strftime("%Y-%m-%d"))
-    print(" Safe after fertile:", safe_after[0].strftime("%Y-%m-%d"), "to", safe_after[1].strftime("%Y-%m-%d"))
-
-
-# ur code is failling if i enter the date in the wrong format
-# 
->>>>>>> d06c13edf0083915ad01857240e175600f049d2a
