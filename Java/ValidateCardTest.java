@@ -10,17 +10,32 @@ public class ValidateCardTest {
     assertEquals("invalid card type", result);
 }
 
-	
+
     @Test
     public void testValidVisaCard() {
 
 	String input = ValidateCard.validatingCardDetail("4111111111111111");
 	String expected = "Visa";
 	
-	assertEquals("Visa", input);
+	assertEquals(expected, input);
 	
 	
 	}
+	
+	@Test
+    public void testValidMasterCard() {
+
+	String input = ValidateCard.validatingCardDetail("5399831619690403");
+	String expected = "MasterCard";
+	
+	assertEquals(expected, input);
+	
+	
+	}
+	
+	
+	
+	
 	
 	
 }

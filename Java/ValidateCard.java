@@ -13,13 +13,13 @@
 		cardType = "Visa";
 	}
 	
-	if(cardLength == 16 && cardNumber.charAt(0) == '5'){
+	else if(cardLength == 16 && cardNumber.charAt(0) == '5'){
 		cardType = "MasterCard";
 	}
-	if(cardLength == 16 && cardNumber.charAt(0) == '6'){
+	else if(cardLength == 16 && cardNumber.charAt(0) == '6'){
 		cardType = "Discover";
 	}
-	if(cardLength == 15 && cardNumber.substring(0, 2).equals("37")){
+	else if(cardLength == 15 && cardNumber.substring(0, 2).equals("37")){
 		cardType = "American Express";
 	} else {
 	
@@ -45,10 +45,10 @@
 	}
 	
 	if(total % 10 == 0){
-	return "valid " +cardType+ " card";
+	return "" +cardType+ "";
 	}else {
 	
-	return "invalid " +cardType+ " card";
+	return cardType;
 	}
 	
 	
