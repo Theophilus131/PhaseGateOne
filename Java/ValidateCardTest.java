@@ -19,7 +19,6 @@ public class ValidateCardTest {
 	
 	assertEquals(expected, input);
 	
-	
 	}
 	
 	@Test
@@ -30,6 +29,27 @@ public class ValidateCardTest {
 	
 	assertEquals(expected, input);
 	
+	}
+	
+	
+	@Test
+    public void testValidDiscoverCard() {
+
+	String input = ValidateCard.validatingCardDetail("6011000000000004");
+	String expected = "Discover";
+	
+	assertEquals(expected, input);
+	
+	}
+	
+	
+	@Test
+    public void testValidAmericanExpressCard() {
+
+	String input = ValidateCard.validatingCardDetail("378282246310005");
+	String expected = "American Express";
+	
+	assertEquals(expected, input);
 	
 	}
 	
