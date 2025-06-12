@@ -6,7 +6,6 @@ def validating_card_detail(card_number):
     
     card_length = len(card_number)
    
-	
     if card_length == 16 and card_number[0] == "4":
         return "Visa"
     elif card_length == 16 and card_number[0]== "5":
