@@ -25,4 +25,8 @@ class TestCardValidation(TestCase):
         result = card_validation.validating_card_detail("378282246310005")
         expected = "America Express"
         self.assertEqual(result, expected)
-    
+        
+    def test_check_discover_card_is_valid(self):
+        result = card_validation.validating_card_detail("601100000000004")
+        expected = "Discover"
+        self.assertEqual(result, expected)
