@@ -19,7 +19,7 @@
 	else if(cardLength == 16 && cardNumber.charAt(0) == '6'){
 		cardType = "Discover";
 	}
-	else if(cardLength == 15 && cardNumber.substring(0, 2).equals("37")){
+	else if(cardLength == 15 && cardNumber.startsWith("37")){
 		cardType = "American Express";
 	} else {
 	
