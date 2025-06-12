@@ -48,7 +48,7 @@
 	return "" +cardType+ "";
 	}else {
 	
-	return cardType;
+	return "invalid " +cardType+ " ";
 	}
 	
 	
