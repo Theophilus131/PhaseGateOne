@@ -47,14 +47,15 @@ public class EcommerceCheckout {
         }
 
         
-        System.out.println("\n===============================");
-        System.out.println("SEMICOLON STORES");
-        System.out.println("MAIN BRANCH, YABA, LAGOS");
+        System.out.println("\n========================================================");
+        System.out.println("SEMICOLON STORES ");
+		System.out.println("MAIN BRANCH		");
+        System.out.println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS");
         System.out.println("TEL: 03293828343");
         System.out.println("DATE: 09-06-2025");
         System.out.println("Customer Name: " + customerName);
         System.out.println("Customer: " + customerName);
-        System.out.println("===============================\n");
+        System.out.println("========================================================\n");
 
        
         System.out.printf("%-20s %-10s %-10s %-10s%n", "Product", "Qty", "Price", "Total");
@@ -89,9 +90,13 @@ public class EcommerceCheckout {
         System.out.printf("Subtotal: %.2f%n", subTotal);
         System.out.printf("Discount: %.2f%n", totalDiscount);
         System.out.printf("VAT (7.5%%): %.2f%n", vat);
+		
+		System.out.println("============================================");
         System.out.printf("Grand Total: %.2f%n", grandTotal);
+		System.out.println("============================================");
         System.out.println("Thank you for you patronage");
-
-        input.close();
+		System.out.println("============================================");
+       
+	   input.close();
     }
 }
