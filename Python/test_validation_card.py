@@ -14,5 +14,9 @@ class TestCardValidation(TestCase):
         result = card_validation.validating_card_detail("4111111111111111")
         expected = "Visa"
         self.assertEqual(result, expected)
+    def test_chect_master_card_is_valid(self):
         
+        result = card_validation.validating_card_detail("5399831619690403")
+        expected = "master_card"
+        self.assertEqual(result, expected)
     
