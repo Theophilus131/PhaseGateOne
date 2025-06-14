@@ -1,36 +1,17 @@
-
 from datetime import datetime
-
 import mestrual_app
-
 from unittest import TestCase
 
 class TestMestrual(TestCase):
-    
 
-    def test_check_that_function_exist(self):
-        mestrual_app.calculate_next_period( "2025-05-09", 25)
-           
+    def test_check_flow_date_is_correct(self):
+
+        result = mestrual_app.flow_date(2025, 5, 9)
+        expected = "Your flow starts on 2025-05-09 and ends on 2025-05-14"
+        self.assertEqual(result, expected)
+
+    def test_check_ovulation_date_is_correct(self):
         
-    def test_calculate_next_period(self):
-        last_period = "2025-06-01"
-        cycle_length = 28
-        expected = datetime(2025, 6, 29)
-        actual =  mestrual_app.calculate_next_period(last_period, cycle_length)
+        actual = mestrual_app.calculate_ovulation(2025, 6, 24, 28)
+        expected = "Your ovulation date is 2025-07-08"
         self.assertEqual(actual, expected)
-        
-        
-        
-    def test_calculate_ovulation_and_fertile_window(self):
-        next_period_date = datetime(2025, 6, 29)
-
-        ovulation, fertile_start, fertile_end =  mestrual_app.calculate_ovulation_and_fertile_window(next_period_date)
-
-        self.assertEqual(ovulation, datetime(2025, 6, 15))
-        self.assertEqual(fertile_start, datetime(2025, 6, 10))
-        self.assertEqual(fertile_end, datetime(2025, 6, 16))
-
-    
-       
-        
-       
