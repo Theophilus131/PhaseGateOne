@@ -15,3 +15,15 @@ class TestMestrual(TestCase):
         actual = mestrual_app.calculate_ovulation(2025, 6, 24, 28)
         expected = "Your ovulation date is 2025-07-08"
         self.assertEqual(actual, expected)
+        
+    def test_check_fertile_window_is_correct(self):
+        
+        actual = mestrual_app.calculate_fertile_window(2025, 6, 24, 28)
+        expected = "Your fertile window is from 2025-07-01 to 2025-07-10"
+        self.assertEqual(actual, expected)
+        
+    def test_check_safe_period_is_correct(self):
+        
+        actual = mestrual_app.calculate_safe_period(2025, 6, 24, 28)
+        expected = "Safe period is all days except 2025-07-01 to 2025-07-10"
+        self.assertEqual(actual, expected)
