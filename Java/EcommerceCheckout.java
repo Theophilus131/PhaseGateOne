@@ -97,6 +97,5 @@ public class EcommerceCheckout {
         System.out.println("Thank you for you patronage");
 		System.out.println("============================================");
        
-	   input.close();
     }
 }

@@ -7,7 +7,7 @@
 	
 	int cardLength = cardNumber.length();
 	
-	String cardType;
+	String cardType = " ";
 	
 	if(cardLength == 16 && cardNumber.charAt(0) == '4'){
 		cardType = "Visa";
@@ -19,12 +19,13 @@
 	else if(cardLength == 16 && cardNumber.charAt(0) == '6'){
 		cardType = "Discover";
 	}
-	else if(cardLength == 15 && cardNumber.startsWith("37")){
+	else if(cardLength == 15 && cardNumber.charAt(0) == 3 && cardNumber.charAt(1) == 7){
 		cardType = "American Express";
 	} else {
 	
 		return "invalid card type";
 	}
+	
 	
 	int total = 0;
 	boolean doubleDigit = false;
@@ -61,9 +62,16 @@
 	
 	System.out.print("kindly enter you card details to verify: ");
 	String cardNumber = input.nextLine();
+	
+	System.out.println("====================================");
+	System.out.println("=== credit card Number: " +cardNumber);
+	System.out.println("=== Length of card: " +cardNumber.length());
+	System.out.println("=== Credit card Validity status:");
+	System.out.println(validatingCardDetail(cardNumber));
+	System.out.println("====================================");
 
 	
-	 System.out.println(validatingCardDetail(cardNumber));
+	
 	
 		}
 	
