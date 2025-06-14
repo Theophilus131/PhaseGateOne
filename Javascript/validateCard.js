@@ -36,3 +36,68 @@ function cardType(cardNumber){
 		return cardType;
 }
 
+
+function lengthOfCard(cardNumber){
+
+ let length = cardNumber.length;
+
+	return length;
+	}
+
+function validateCard(cardNumber){
+	
+	let cardLength = cardNumber.length;
+	let validCard = "";
+	let total = 0;
+	let doubleDigit = false;
+	
+	for(let count = cardLength - 1; count >= 0; count--){
+	let digit = Number(cardNumber.charAt(count));
+	
+	if(doubleDigit){
+	digit *= 2;
+	
+	if(digit > 9){
+	digit -= 9;
+	}
+		}
+	total += digit;
+	doubleDigit = !doubleDigit;
+	
+	}
+	
+	if(total % 10 == 0){
+	validCard = "valid ";
+		}
+
+	else if(total % 10 != 0){
+	validCard = "invalid ";
+	}
+	
+	return validCard;
+
+}
+
+let cardNumbers = prompt("kindly enter card details to verify : ");
+
+const userCard = cardType(cardNumbers);
+
+console.log("=====================================");
+console.log("====credit card Type: " +userCard  );
+console.log("====credit card Number: "+ cardNumbers);
+
+let cardLengths = lengthOfCard(cardNumbers);
+console.log("=== length of card: " +cardLengths);
+
+let cardStatus =  validateCard(cardNumbers);
+console.log("credit card validity status: " +cardStatus);
+
+console.log("=====================================");
+
+
+
+
+
+
+
+
