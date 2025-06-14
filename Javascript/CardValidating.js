@@ -2,8 +2,11 @@ const prompt = require("prompt-sync")();
 
 let cardNumber = prompt("kindly enter card details to verify : ");
 
+
+
 function validateCard(cardNumber){
-	
+		
+
 	let cardLength = cardNumber.length;
 	
 	let cardType = "" ;
