@@ -30,10 +30,8 @@ public class EcommerceCheckout {
 
             System.out.print("Enter price per unit: ");
             double price = input.nextDouble();
-
             input.nextLine(); 
 
-           
             productNames.add(productName);
             quantities.add(quantity);
             prices.add(price);
@@ -61,9 +59,11 @@ public class EcommerceCheckout {
         System.out.printf("%-20s %-10s %-10s %-10s%n", "Product", "Qty", "Price", "Total");
         System.out.println("--------------------------------------------------");
 
-        double subTotal = 0;
+		System.out.println("How many discount will customer have?? :");
+			double discount = input.nextDouble();
+        
+		double subTotal = 0;
 
-       
         for (int i = 0; i < productNames.size(); i++) {
             String name = productNames.get(i);
             double qty = quantities.get(i);
@@ -77,25 +77,25 @@ public class EcommerceCheckout {
         }
 
       
-	  
-        double discount = 8 / 100;      
-        double totalDiscount = subTotal - discount;
+             
+        double discountAmount = subTotal * (discount/100);
 		
-        double vat = totalDiscount * 0.075;
-
-        double grandTotal = totalDiscount + vat;
-
-       
-        System.out.println("--------------------------------------------------");
-        System.out.printf("Subtotal: %.2f%n", subTotal);
-        System.out.printf("Discount: %.2f%n", totalDiscount);
-        System.out.printf("VAT (7.5%%): %.2f%n", vat);
+		double totalDiscountAmount = subTotal - discountAmount;
 		
-		System.out.println("============================================");
-        System.out.printf("Grand Total: %.2f%n", grandTotal);
-		System.out.println("============================================");
-        System.out.println("Thank you for you patronage");
-		System.out.println("============================================");
+        double vat = totalDiscountAmount * 0.075;
+
+        double grandTotal = totalDiscountAmount + vat;
+
+System.out.println("--------------------------------------------------");
+System.out.printf("Subtotal: %.2f%n", subTotal);
+System.out.printf("Discount (%.2f%%): %.2f%n", discountAmount, totalDiscountAmount);
+System.out.printf("VAT (7.5%%): %.2f%n", vat);
+System.out.println("============================================");
+System.out.printf("Grand Total: %.2f%n", grandTotal);
+System.out.println("============================================");
+System.out.println("Thank you for your patronage");
+System.out.println("============================================");
+
        
     }
 }
