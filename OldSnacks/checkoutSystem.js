@@ -61,9 +61,8 @@ const prompt = require("prompt-sync")();
       
 	  
         let discount = 8 / 100;      
-       
-		let totalDiscount = subTotal - (subTotal * discount);
-
+        let totalDiscount = subTotal - discount;
+		
         let vat = totalDiscount * 0.075;
 
         let grandTotal = totalDiscount + vat;
