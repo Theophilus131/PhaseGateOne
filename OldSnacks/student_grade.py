@@ -8,23 +8,20 @@ for student in range(1, number_student + 1):
     print(f"\nEntering scores for Student {student}")
     
     for subject in range(1, number_subject + 1):
-        score = int(input(f"  Enter score for Subject {subject}: "))
        
-
-
+        while True:
+            score = int(input(f"  Enter score for Subject {subject}: "))
+            if 0 <= score <= 100:
+                break
+            else:
+                print("  Invalid score. Please enter a number between 0 and 100.")
     
  
-    """
-    
-    score += 1
+"""
+score += 1
 if score < 0 and score <= 100:
         print("invalid score")
         
-
-print("saving >>>>>>>>>>>>>>>>>>>>>>>")
-print("Saved successfully")
-
-
 total = 0
 average = 0
 
@@ -37,4 +34,4 @@ def calculating_average():
 
 	average = total/ number_subject
     
-    """
+"""
