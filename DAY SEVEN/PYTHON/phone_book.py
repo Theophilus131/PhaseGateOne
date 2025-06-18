@@ -3,18 +3,32 @@ contacts = []
 
 def add_contact(first_name, last_name, phone_number):
 
-	contacts.append({first_name, last_name, phone_number})
-"""
+	return contacts.append({"first_name": first, "last_name": last, "phone_number": phone})
+
 def remove_contact():
+	for contact in contacts:
+		if contact["phone_number"] != phone:
+			return None
 
 def find_contact_by_phone():
+	for contact in contacts:
+		if contact["phone_number"] == phone:
+	
+			return phone
 
 def find_contact_by_first_name():
+	for contact in contacts:
+		if contact["first_name"] == first:
+			return first
 
 def find_contact_by_last_name():
+	for contact in contacts:
+		if contact["last_name"] == last:
 
-def edit_contact():
-"""
+			return last
+
+#def edit_contact():
+
 
 
 
