@@ -1,14 +1,47 @@
 import java.util.Scanner;
-import java. ArrayList;
+import java.util.ArrayList;
 
 public class PhoneNumber{
 
 
-public static void addContact(){}
+public static void addContact(String firstName, String lastName, String phoneNumber){
+contacts.add(firstName);
+contacts.add(lastName);
+contacts.add(phoneNumber);
 
-public static void removeContact(){}
+System.out.println("contact  added successfully: ");
 
-public static void findByPhone(){}
+
+
+}
+
+public static void removeContact(String phoneNumber){
+for(int index = 0; index < contacts.size(); index += 3){
+if(contacts.get(index + 2).equals(phoneNumber)){
+	contacts.remove(index + 2);
+	contacts.remove(index + 1);
+	contacts.remove(index);
+	
+	System.out.println("contact removed successfully. ");
+	return;
+}
+	}
+	System.out.println("contact not found. ");
+}
+
+public static void findByPhone(String phoneNumber){
+for (int index = 0; index < contacts.size(); index += 3){
+if(contacts.get(index + 2).equals(phoneNumber)){
+
+	System.out.println("phone number found:");
+	return;
+
+}
+
+
+	}
+	System.out.println("phone number not found: ");
+}
 
 public static void findByFirstName(){}
 
@@ -23,6 +56,9 @@ public static void editContact(){}
 
 public static void main(String [] args){
 Scanner input = new Scanner(System.in);
+
+ArrayList<String> contacts = new ArrayList<>();
+
 while(true){
 
 	System.out.println("""
