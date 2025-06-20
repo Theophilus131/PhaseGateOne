@@ -43,12 +43,51 @@ if(contacts.get(index + 2).equals(phoneNumber)){
 	System.out.println("phone number not found: ");
 }
 
-public static void findByFirstName(){}
+public static void findByFirstName(String firstName){
+for(int index = 0; index < contacts.size(); index += 3){
+	if(contacts.get(index).equals(firstName)){
+	
+	System.out.println("First Name found :");
+	return;
+	}
 
-public static void findByLastName(){}
+}
+	System.out.println("first name not found. ");
 
-public static void editContact(){}
+}
 
+public static void findByLastName(String lastName){
+
+	for(int index = 0; index < contacts.size(); index +=3){
+		if(contacts.get(index + 1).equals(lastName)){
+
+		System.out.println("last name found ");
+		return;
+
+		}
+
+
+
+	}
+
+
+		System.out.println("last name not found. ");
+
+
+}
+
+ public static void editContact(String oldPhone, String newFirst, String newLast, String newPhone) {
+        for (int i = 0; i < contacts.size(); i += 3) {
+            if (contacts.get(i + 2).equals(oldPhone)) {
+                if (!newFirst.isEmpty()) contacts.set(i, newFirst);
+                if (!newLast.isEmpty()) contacts.set(i + 1, newLast);
+                if (!newPhone.isEmpty()) contacts.set(i + 2, newPhone);
+                System.out.println("Contact updated.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
 
 
 
