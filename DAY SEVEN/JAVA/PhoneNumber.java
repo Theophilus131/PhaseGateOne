@@ -3,6 +3,9 @@ import java.util.ArrayList;
 
 public class PhoneNumber{
 
+static Scanner input = new Scanner(System.in);
+
+static ArrayList<String> contacts = new ArrayList<>();
 
 public static void addContact(String firstName, String lastName, String phoneNumber){
 contacts.add(firstName);
@@ -94,9 +97,7 @@ public static void findByLastName(String lastName){
 
 
 public static void main(String [] args){
-Scanner input = new Scanner(System.in);
 
-ArrayList<String> contacts = new ArrayList<>();
 
 while(true){
 
@@ -120,8 +121,8 @@ while(true){
 			System.out.print("Enter First Name: ");
 			String first = input.nextLine();
 			
-			System.out.print("Enter second Name: ");
-			String second = input.nextLine();
+			System.out.print("Enter last Name: ");
+			String last = input.nextLine();
 	
 			System.out.print("Enter phone number: ");
 			String phone = input.nextLine();
@@ -138,7 +139,7 @@ while(true){
 
 		case "3":
 			System.out.print("Enter phone number: ");
-			findByPhone(input.nextLine);
+			findByPhone(input.nextLine());
 			break;
 
 		case "4":
