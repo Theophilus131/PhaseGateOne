@@ -21,18 +21,32 @@ def find_contact_by_phone(phone_number):
 			return contact
 	return None
 
-def find_contact_by_first_name():
+def find_contact_by_first_name(first_name):
 	for contact in contacts:
-		if contact["first_name"] == first:
-			return first
+		if contact["first_name"] == first_name:
+			return contact
+	return None
 
-def find_contact_by_last_name():
+def find_contact_by_last_name(last_name):
 	for contact in contacts:
-		if contact["last_name"] == last:
+		if contact["last_name"] == last_name:
 
-			return last
+			return contact
+	return None
 
-#def edit_contact():
+def edit_contact(phone_number, new_first_name="", new_last_name="", new_phone_number=""):
+	contact = find_contact_by_phone(phone_number)
+
+	if contact:
+		if new_first_name:
+			contact["first_name"] = new_first_name
+		if new_last_name:
+			contact["last_name"] = new_last_name
+		if new_phone_number:
+			contact["phone_number"] = new_phone_number
+		print("contact updated: ")
+	else:
+		print("contact not found: ")
 
 
 
@@ -68,7 +82,7 @@ def menu():
 			phone = input("Enter phone number: ")
 			result = find_contact_by_phone(phone)
 			if result:
-				print("phone number found: " result)
+				print("phone number found: ", result)
 			else:
 				print("phone number not found. ")
 			
@@ -78,7 +92,7 @@ def menu():
 			result = find_contact_by_first_name(first_name)
 			
 			if result:
-				print("first name found succefully>>>>" result)
+				print("first name found succefully>>>>", result)
 			else:
 				print("first name not found ")
 
@@ -87,11 +101,20 @@ def menu():
 
 			result = find_contact_by_last_name(last_name)
 			if result:
-				print("last name found succefully>>>>" result)
+				print("last name found succefully>>>>", result)
 			else:
 				print("last name not found .")
+
 		elif choice == "6":
-			edit_contact()
+			phone = input("Enter phone number of contact to edit: ")
+			new_first_name = ("Enter new first name: ")
+			new_last_name = input("Enter last name: ")
+			new_phone_number = input("New phone number: ")
+			
+			edit_contact(phone_number, new_first_name, new_last_name, new_phone_number)
+
+			
+
 		elif choice == "7":
 			print("Exit")
 			break
