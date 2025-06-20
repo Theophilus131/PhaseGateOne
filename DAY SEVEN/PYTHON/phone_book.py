@@ -3,18 +3,23 @@ contacts = []
 
 def add_contact(first_name, last_name, phone_number):
 
-	return contacts.append({"first_name": first, "last_name": last, "phone_number": phone})
+	return contacts.append({"first_name": first_name, "last_name": last_name, "phone_number": phone_number})
 
-def remove_contact():
+def remove_contact(phone_number):
 	for contact in contacts:
-		if contact["phone_number"] != phone:
-			return None
-
-def find_contact_by_phone():
-	for contact in contacts:
-		if contact["phone_number"] == phone:
+		if contact["phone_number"] == phone_number:
+			contacts.remove(contact)
+			print("contact removed succefully")
+			
+		return print("Contact not found.")
 	
-			return phone
+    
+def find_contact_by_phone(phone_number):
+	for contact in contacts:
+		if contact["phone_number"] == phone_number:
+	
+			return contact
+	return None
 
 def find_contact_by_first_name():
 	for contact in contacts:
@@ -52,16 +57,39 @@ def menu():
 			last_name = input("Enter your last name: ")
 			phone = input("Enter phone number: ")
 			
+			add_contact(first_name, last_name, phone)
 			print("contact added successfully ")
-			add_contact()
+
 		elif choice == "2":
-			 remove_contact()
+			phone_number = input("Enter the phone number: ")
+			remove_contact(phone_number)
+
 		elif choice == "3":
-			find_contact_by_phone()
+			phone = input("Enter phone number: ")
+			result = find_contact_by_phone(phone)
+			if result:
+				print("phone number found: " result)
+			else:
+				print("phone number not found. ")
+			
+
 		elif choice == "4":
-			find_contact_by_first_name()
+			first_name = input("Enter your first name: ")
+			result = find_contact_by_first_name(first_name)
+			
+			if result:
+				print("first name found succefully>>>>" result)
+			else:
+				print("first name not found ")
+
 		elif choice == "5":
-			find_contact_by_last_name()
+			last_name = input("Enter your last name: ")
+
+			result = find_contact_by_last_name(last_name)
+			if result:
+				print("last name found succefully>>>>" result)
+			else:
+				print("last name not found .")
 		elif choice == "6":
 			edit_contact()
 		elif choice == "7":
